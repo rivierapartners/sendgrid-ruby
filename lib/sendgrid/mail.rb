@@ -146,7 +146,7 @@ module SendGrid
         :html => html,
         :'x-smtpapi' => smtpapi_json,
         :content => ({":default"=>"0"} unless contents.empty?),
-        :files => ({":default"=>"0"} unless attachments.empty? and contents.empty?)
+        :files => ({":default"=>""} unless attachments.empty? and contents.empty?)
         # If I don't define a default value, I get a Nil error when
         # in attachments.each do |file|
         #:files => ({} unless attachments.empty?)
